@@ -3,203 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Creative Agency</title>
+    <title>Mirha Aroob</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background: #111; color: #fff; text-align: center; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header { padding: 20px; background: #222; }
+        nav ul { list-style: none; display: flex; justify-content: center; gap: 20px; }
+        nav a { color: #fff; text-decoration: none; font-size: 1.2rem; }
+        .hero { position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; overflow: hidden; }
+        .hero video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
+        .hero h1 { font-size: 4rem; position: relative; }
+        .hero p { font-size: 1.2rem; margin-top: 10px; position: relative; }
+        .about, .contact { padding: 50px 20px; }
+        .gallery { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; padding: 50px 20px; }
+        .gallery-item { position: relative; overflow: hidden; transition: transform 0.3s ease; width: 300px; }
+        .gallery-item img { width: 100%; transition: transform 0.3s ease; }
+        .gallery-item:hover { transform: scale(0.9); }
+        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-item h3 { margin-top: 10px; font-size: 1.2rem; }
+        footer { background: #222; padding: 20px; margin-top: 50px; }
+        @media (max-width: 768px) { 
+            .hero video { content: url('assets/mobile.mp4'); }
+            .hero h1 { font-size: 2.5rem; } 
+            .hero p { font-size: 1rem; }
+            nav ul { flex-direction: column; }
         }
-
-        body {
-            line-height: 1.6;
-            color: #333;
-        }
-
-        /* Navigation */
-        .navbar {
-            position: fixed;
-            width: 100%;
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.95);
-            z-index: 1000;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: #f5f5f5;
-            padding: 0 20px;
-        }
-
-        .hero-content h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Portfolio Grid */
-        .portfolio {
-            padding: 80px 40px;
-            background: #fff;
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .portfolio-item {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .portfolio-item img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .portfolio-item:hover img {
-            transform: scale(1.05);
-        }
-
-        .portfolio-item .overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 20px;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-
-        .portfolio-item:hover .overlay {
-            transform: translateY(0);
-        }
-
-        /* Footer */
-        .footer {
-            background: #333;
-            color: white;
-            padding: 40px;
-            text-align: center;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 20px;
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .nav-links {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-            }
-
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-
-            .hero-content p {
-                font-size: 1rem;
-            }
-
-            .portfolio {
-                padding: 40px 20px;
-            }
+        @media (min-width: 769px) {
+            .hero video { content: url('assets/laptop.mp4'); }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="logo">Creative</div>
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#work">Work</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home" class="hero">
+        <video autoplay muted loop>
+            <source src="assets/laptop.mp4" type="video/mp4">
+        </video>
+        <h1>Welcome</h1>
+        <p>This is my portfolio.</p>
+    </section>
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>I create stunning responsive websites.</p>
+    </section>
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <p>Email: f223371@cfd.nu.edu.pk</p>
+    </section>
+    <h2>My Projects</h2>
+    <section class="gallery">
+        <div class="gallery-item">
+            <img src="https://cdn.dribbble.com/userupload/15923161/file/original-f14b1f6910cab67c2565d9a97004bfcd.png?resize=1504x1128&vertical=center" alt="UI Dashboard Design" style="border-radius: 10px;">
+            <h3>Pharmacy Management System App</h3>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Creative Digital Agency</h1>
-            <p>We craft beautiful and functional digital experiences that help brands connect with their audience.</p>
+        <div class="gallery-item">
+            <img src="https://cdn.dribbble.com/users/5557327/screenshots/18888513/media/8ae088bf416f814c5ace09c25e3d9feb.png?resize=1600x1200&vertical=center" alt="Mobile App Interface" style="border-radius: 10px;">
+            <h3>Social Media App</h3>
+        </div>
+        <div class="gallery-item">
+            <img src="https://cdn.dribbble.com/userupload/14207161/file/original-8dce3361df6117e3fe38d08ad6faac84.png?resize=1504x1128&vertical=center" alt="Web Landing Page" style="border-radius: 10px;">
+            <h3>Designer Companion</h3>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section class="portfolio" id="work">
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <img src="https://via.placeholder.com/400x300" alt="Project 1">
-                <div class="overlay">
-                    <h3>Project One</h3>
-                    <p>Branding & UI Design</p>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <img src="https://via.placeholder.com/400x300" alt="Project 2">
-                <div class="overlay">
-                    <h3>Project Two</h3>
-                    <p>Web Development</p>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <img src="https://via.placeholder.com/400x300" alt="Project 3">
-                <div class="overlay">
-                    <h3>Project Three</h3>
-                    <p>Digital Marketing</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer" id="contact">
-        <p>&copy; 2025 Creative Agency. All rights reserved.</p>
-        <p>Contact: hello@creativeagency.com</p>
+    <footer>
+        <p>&copy; 2025 Mirha Aroob</p>
     </footer>
+    <script>
+        function updateVideoSource() {
+            const video = document.querySelector('.hero video');
+            if (window.innerWidth <= 768) {
+                video.src = 'assets/mobile.mp4';
+            } else {
+                video.src = 'assets/laptop.mp4';
+            }
+            video.play();
+        }
+        window.addEventListener('resize', updateVideoSource);
+        window.addEventListener('load', updateVideoSource);
+    </script>
 </body>
 </html>
