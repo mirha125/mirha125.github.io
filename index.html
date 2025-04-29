@@ -1,95 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mirha Aroob</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-        body { background: #111; color: #fff; text-align: center; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        header { padding: 20px; background: #222; }
-        nav ul { list-style: none; display: flex; justify-content: center; gap: 20px; }
-        nav a { color: #fff; text-decoration: none; font-size: 1.2rem; }
-        .hero { position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; overflow: hidden; }
-        .hero video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
-        .hero h1 { font-size: 4rem; position: relative; }
-        .hero p { font-size: 1.2rem; margin-top: 10px; position: relative; }
-        .about, .contact { padding: 50px 20px; }
-        .gallery { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; padding: 50px 20px; }
-        .gallery-item { position: relative; overflow: hidden; transition: transform 0.3s ease; width: 300px; }
-        .gallery-item img { width: 100%; transition: transform 0.3s ease; }
-        .gallery-item:hover { transform: scale(0.9); }
-        .gallery-item:hover img { transform: scale(1.1); }
-        .gallery-item h3 { margin-top: 10px; font-size: 1.2rem; }
-        footer { background: #222; padding: 20px; margin-top: 50px; }
-        @media (max-width: 768px) { 
-            .hero video { content: url('assets/mobile.mp4'); }
-            .hero h1 { font-size: 2.5rem; } 
-            .hero p { font-size: 1rem; }
-            nav ul { flex-direction: column; }
-        }
-        @media (min-width: 769px) {
-            .hero video { content: url('assets/laptop.mp4'); }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MY PORTFOLOLIO | Home</title>
+
+  <!-- Favicon Link -->
+  <link rel="icon" href="myportfolio.png"
+
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #0a0a23;
+      color: #fff;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    /* Navigation Styles */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .logo {
+      font-size: 32px;
+      font-weight: 700;
+      color: white;
+      animation: fadeIn 2s ease-in-out;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    /* Hover effect for logo */
+    .logo:hover {
+      transform: scale(1.1);
+      color: #00bcd4;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #aaa;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav ul li a.active,
+    nav ul li a:hover {
+      color: #00bcd4;
+    }
+
+    /* Hero Section Styles */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 60px;
+      animation: slideIn 2s ease-out;
+    }
+
+    .hero-text {
+      max-width: 600px;
+      animation: fadeInUp 2s ease-in-out;
+    }
+
+    .hero-text h2 {
+      font-size: 48px;
+      font-weight: 700;
+      animation: fadeInUp 2s ease-in-out;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .hero-text h2:hover {
+      color: #00bcd4;
+      transform: scale(1.1);
+    }
+
+    .hero-text h3 {
+      font-size: 30px;
+      color: #00bcd4;
+      margin-top: 10px;
+      animation: fadeInUp 2s ease-in-out;
+      cursor: pointer;
+    }
+
+    .hero-text h3:hover {
+      color: #ff4081;
+    }
+
+    .hero-text p {
+      margin-top: 20px;
+      color: #ccc;
+      line-height: 1.6;
+      animation: fadeInUp 2s ease-in-out;
+      cursor: pointer;
+    }
+
+    .buttons {
+      margin-top: 30px;
+      animation: fadeInUp 2s ease-in-out;
+    }
+
+    .btn-primary {
+      background-color: #00bcd4;
+      padding: 12px 25px;
+      border-radius: 30px;
+      color: #fff;
+      text-decoration: none;
+      margin-right: 15px;
+      transition: 0.3s;
+    }
+
+    .btn-primary:hover {
+      background-color: #0097a7;
+    }
+
+    .btn-outline {
+      border: 2px solid #00bcd4;
+      padding: 10px 23px;
+      border-radius: 30px;
+      color: #00bcd4;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn-outline:hover {
+      background-color: #00bcd4;
+      color: #fff;
+    }
+
+    .hero-img img {
+      width: 350px;
+      border-radius: 50%;
+      border: 5px solid #00bcd4;
+      animation: bounceIn 2s ease-in-out;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    /* Hover effect for image */
+    .hero-img img:hover {
+      transform: scale(1.1);
+      border-color: #ff4081;
+    }
+
+    /* Keyframes for Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes bounceIn {
+      0% {
+        opacity: 0;
+        transform: scale(0);
+      }
+      60% {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section id="home" class="hero">
-        <video autoplay muted loop>
-            <source src="assets/laptop.mp4" type="video/mp4">
-        </video>
-        <h1>Welcome</h1>
-        <p>This is my portfolio.</p>
-    </section>
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <p>I create stunning responsive websites.</p>
-    </section>
-    <section id="contact" class="contact">
-        <h2>Contact Me</h2>
-        <p>Email: f223371@cfd.nu.edu.pk</p>
-    </section>
-    <h2>My Projects</h2>
-    <section class="gallery">
-        <div class="gallery-item">
-            <img src="https://cdn.dribbble.com/userupload/15923161/file/original-f14b1f6910cab67c2565d9a97004bfcd.png?resize=1504x1128&vertical=center" alt="UI Dashboard Design" style="border-radius: 10px;">
-            <h3>Pharmacy Management System App</h3>
-        </div>
-        <div class="gallery-item">
-            <img src="https://cdn.dribbble.com/users/5557327/screenshots/18888513/media/8ae088bf416f814c5ace09c25e3d9feb.png?resize=1600x1200&vertical=center" alt="Mobile App Interface" style="border-radius: 10px;">
-            <h3>Social Media App</h3>
-        </div>
-        <div class="gallery-item">
-            <img src="https://cdn.dribbble.com/userupload/14207161/file/original-8dce3361df6117e3fe38d08ad6faac84.png?resize=1504x1128&vertical=center" alt="Web Landing Page" style="border-radius: 10px;">
-            <h3>Designer Companion</h3>
-        </div>
-    </section>
 
-    <footer>
-        <p>&copy; 2025 Mirha Aroob</p>
-    </footer>
-    <script>
-        function updateVideoSource() {
-            const video = document.querySelector('.hero video');
-            if (window.innerWidth <= 768) {
-                video.src = 'assets/mobile.mp4';
-            } else {
-                video.src = 'assets/laptop.mp4';
-            }
-            video.play();
-        }
-        window.addEventListener('resize', updateVideoSource);
-        window.addEventListener('load', updateVideoSource);
-    </script>
+<header>
+  <div class="container">
+    <div class="nav">
+      <h1 class="logo">Mirha.</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <h2>Hi, I'm Mirha Aroob</h2>
+        <h3><span>Frontend Developer</span></h3>
+        <p>Passionate about building beautiful and functional websites using HTML, CSS, React, and C++.</p>
+        <div class="buttons">
+          <a href="#" class="btn-primary" onclick="hireMe()">Hire Me</a>
+          <a href="contact.html" class="btn-outline">Let's Talk</a>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="myportfolio.png" alt="Mirha Aroob">
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Optional: Function for "Hire Me" button action
+  function hireMe() {
+    alert("Thank you for considering me! Let's connect.");
+  }
+</script>
+
 </body>
 </html>

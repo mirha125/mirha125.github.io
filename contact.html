@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mirha Aroob | Contact</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #0a0a23;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    /* Navigation Styles */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .logo {
+      font-size: 32px;
+      font-weight: 700;
+      color: white;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .logo:hover {
+      transform: scale(1.1);
+      color: #00bcd4;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #aaa;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav ul li a.active,
+    nav ul li a:hover {
+      color: #00bcd4;
+    }
+
+    /* Contact Section Styles */
+    .contact-section {
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url('contact-bg.jpg') no-repeat center center/cover;
+      padding: 80px 40px;
+      text-align: center;
+      border-radius: 10px;
+      margin-top: 40px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .contact-section h2 {
+      font-size: 50px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      animation: fadeInUp 2s ease-in-out;
+    }
+
+    .contact-section p {
+      font-size: 20px;
+      color: #ccc;
+      max-width: 600px;
+      margin: auto;
+      line-height: 1.8;
+      margin-bottom: 15px;
+      animation: fadeInUp 2s ease-in-out;
+    }
+
+    .contact-section a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background-color: #00bcd4;
+      color: #fff;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .contact-section a:hover {
+      background-color: #0097a7;
+    }
+
+    /* Keyframes for Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="nav">
+      <h1 class="logo">Mirha.</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <section class="contact-section">
+      <h2>Contact Me</h2>
+      <p>Email: mirhaaroob439@gmail.com</p>
+      <p>Phone: 03049992748</p>
+      <p>Location: Pakistan</p>
+      <a href="mailto:mirhaaroob439@gmail.com">Send an Email</a>
+    </section>
+  </div>
+</header>
+
+</body>
+</html>
